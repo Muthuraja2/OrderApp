@@ -1,0 +1,51 @@
+@Metadata.layer: #CORE
+
+@UI: {
+    headerInfo: {
+        typeName: 'Order',
+        typeNamePlural: 'Orders',
+        title.value: 'Status'
+    }
+}
+
+annotate entity ZORD_C_ORDER with
+{
+
+  @UI.facet: [{ id : 'idOrder', label : 'Order', type: #IDENTIFICATION_REFERENCE, position : 10 },
+              { id : 'idOrderItem',  label : 'Order Item', type: #LINEITEM_REFERENCE, position : 20, targetElement: '_items' }
+                    ]
+
+
+  @UI.identification: [{ position : 10  }]
+  @EndUserText.label: 'Order UUID'
+  Orderid;
+  @UI.identification: [{ position : 20  }]
+  @EndUserText.label: 'Customer UUID'
+  Customerid;
+  @EndUserText.label: 'Order Date'
+  @UI.lineItem: [{ position : 10  }]
+  @UI.identification: [{ position : 30  }]
+  Orderdate;
+  @EndUserText.label: 'Order Amount'
+  @UI.lineItem: [{ position : 20  }]
+  @UI.identification: [{ position : 40  }]
+  Amount;
+  @EndUserText.label: 'Order Status'
+  @UI.lineItem: [{ position : 30  }]
+  @UI.identification: [{ position : 50  }]
+  Status;
+  @EndUserText.label: 'Created By'
+  @UI.lineItem: [{ position : 40  }]
+  @UI.identification: [{ position : 60  }]
+  Createdby;
+  @EndUserText.label: 'Created At'
+  @UI.lineItem: [{ position : 50  }]
+  @UI.identification: [{ position : 70  }]
+  Createdat;
+  @EndUserText.label: 'Changed by'
+  @UI.identification: [{ position : 80  }]
+  Lastchangedby;
+  @EndUserText.label: 'Change At'
+  @UI.identification: [{ position : 90  }]
+  Changedat;
+}

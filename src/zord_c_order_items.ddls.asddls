@@ -1,6 +1,7 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Projection view - Order Items'
 @Metadata.ignorePropagatedAnnotations: true
+@Metadata.allowExtensions: true
 define view entity ZORD_C_ORDER_ITEMS
   as projection on ZORD_R_ORDER_ITEMS
 {

@@ -1,0 +1,46 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo: {
+        typeName: 'Order Item',
+        typeNamePlural: 'Order Items',
+        title.value: 'Productname'
+    }
+}
+
+annotate entity ZORD_C_ORDER_ITEMS with
+{
+  @UI.facet: [{ id : 'idOrderItem1', label : 'Order Item', type: #IDENTIFICATION_REFERENCE, position : 10 }]
+
+  @EndUserText.label: 'Order Item UUID'
+  @UI.identification: [{ position : 10  }] 
+  Orderitemid;
+  @EndUserText.label: 'Order UUID'
+  @UI.identification: [{ position : 20  }]
+  Orderid;
+  @EndUserText.label: 'Product Name'
+  @UI.lineItem: [{ position : 10  }]
+  @UI.identification: [{ position : 30  }]
+  Productname;
+  @UI.lineItem: [{ position : 20  }]
+  @UI.identification: [{ position : 40  }]
+  @EndUserText.label: 'Quantity'
+  Quantity;
+  @UI.lineItem: [{ position : 30  }]
+  @UI.identification: [{ position : 50  }]
+  @EndUserText.label: 'Unit Price'
+  Unitprice;
+  @UI.lineItem: [{ position : 40  }]
+  @UI.identification: [{ position : 60  }]
+  @EndUserText.label: 'Created by'
+  Createdby;
+  @UI.lineItem: [{ position : 50  }]
+  @UI.identification: [{ position : 70  }]
+  @EndUserText.label: 'Created At'
+  Createdat;
+  @EndUserText.label: 'Changed by'
+  @UI.identification: [{ position : 80  }]
+  Lastchangedby;
+  @EndUserText.label: 'Change At'
+  @UI.identification: [{ position : 90  }]
+  Changedat;
+}

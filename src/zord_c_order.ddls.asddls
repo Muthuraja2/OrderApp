@@ -1,6 +1,7 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Projection view - Orders'
 @Metadata.ignorePropagatedAnnotations: true
+@Metadata.allowExtensions: true
 define root view entity ZORD_C_ORDER
   provider contract transactional_query
   as projection on ZORD_R_ORDER

@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition - Order App'
+define service ZORD_SD_ORDER_APP {
+  expose ZORD_C_ORDER;
+  expose ZORD_C_ORDER_ITEMS;
+}
