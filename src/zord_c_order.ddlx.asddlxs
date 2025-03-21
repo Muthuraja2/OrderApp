@@ -20,7 +20,10 @@ annotate entity ZORD_C_ORDER with
   @EndUserText.label: 'Order UUID'
   Orderid;
   @UI.identification: [{ position : 20  }]
+  @UI.lineItem: [{ position : 5 }]
   @EndUserText.label: 'Customer UUID'
+  @UI.selectionField: [{ position : 10 }]
+  @Consumption.valueHelpDefinition: [{ entity : { element: 'CustomerUuid', name : 'ZC_CUSTOMER_VH' }  }]
   Customerid;
   @EndUserText.label: 'Order Date'
   @UI.lineItem: [{ position : 10  }]
@@ -33,7 +36,13 @@ annotate entity ZORD_C_ORDER with
   @EndUserText.label: 'Order Status'
   @UI.lineItem: [{ position : 30  }]
   @UI.identification: [{ position : 50  }]
+  @UI.selectionField: [{ position : 20 }]
+  @Consumption.valueHelpDefinition: [{ entity : { element : 'value_low', name : 'ZORD_C_ORDER_STATUS_VH' } }]
   Status;
+  @EndUserText.label: 'Comments'
+  @UI.lineItem: [{ position : 35  }]
+  @UI.identification: [{ position : 55  }]
+  Comments;
   @EndUserText.label: 'Created By'
   @UI.lineItem: [{ position : 40  }]
   @UI.identification: [{ position : 60  }]
