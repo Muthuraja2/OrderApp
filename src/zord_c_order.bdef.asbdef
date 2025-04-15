@@ -14,6 +14,9 @@ define behavior for ZORD_C_ORDER alias Order
   use action Resume;
   use action Prepare;
 
+  use action complete;
+  use action cancel;
+
   use association _items { create; with draft; }
 }
 

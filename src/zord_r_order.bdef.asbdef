@@ -13,7 +13,11 @@ etag master Changedat
   update;
   delete;
   field ( numbering : managed, readonly ) Orderid;
-  association _items { create; }
+  field ( mandatory : create, readonly : update ) Customerid;
+  association _items { create (features : instance);  }
+
+  action complete;
+  action cancel;
 
   draft action Activate;
   draft action Discard;
@@ -45,9 +49,12 @@ lock dependent by _header
 authorization dependent by _header
 etag master Changedat
 {
-  update;
-  delete;
+  update(features : instance);
+  delete(features : instance);
   field ( numbering : managed, readonly ) Orderitemid;
   field ( readonly ) Orderid;
+  validation valItemLimits on save { create; }
+  determination detOrderAmount on save { create; update; }
+
   association _header;
 }

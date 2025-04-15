@@ -16,18 +16,23 @@ annotate entity ZORD_C_ORDER with
                     ]
 
 
-  @UI.identification: [{ position : 10  }]
+  @UI.lineItem: [ { position : 10 },
+                  { position : 20, type: #FOR_ACTION, dataAction: 'complete', label: 'Complete Order' },
+                   { position : 30, type: #FOR_ACTION, dataAction: 'cancel', label: 'Cancel Order' }  ]
+  @UI.identification: [{ position : 10 },
+                       { position : 20, type: #FOR_ACTION, dataAction: 'complete', label: 'Complete Order' },
+                       { position : 30, type: #FOR_ACTION, dataAction: 'cancel', label: 'Cancel Order' } ]
   @EndUserText.label: 'Order UUID'
   Orderid;
   @UI.identification: [{ position : 20  }]
-  @UI.lineItem: [{ position : 5 }]
+  @UI.lineItem: [{ position : 5, type: #FOR_ACTION, dataAction: 'complete', label: 'Complete Order' } ]
   @EndUserText.label: 'Customer UUID'
   @UI.selectionField: [{ position : 10 }]
   @Consumption.valueHelpDefinition: [{ entity : { element: 'CustomerUuid', name : 'ZC_CUSTOMER_VH' }  }]
   Customerid;
   @EndUserText.label: 'Order Date'
-  @UI.lineItem: [{ position : 10  }]
-  @UI.identification: [{ position : 30  }]
+  @UI.lineItem: [{ position : 10 }]
+  @UI.identification: [{ position : 30 } ]
   Orderdate;
   @EndUserText.label: 'Order Amount'
   @UI.lineItem: [{ position : 20  }]
